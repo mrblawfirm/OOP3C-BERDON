@@ -212,7 +212,7 @@ class Main
                 $this->roster->displayCE(); //  displayCE balatu shows commission employees
                 break;
             case 3:
-                $this->roster->displayHE(); //  displayHE  oras paabuton employees 
+                $this->roster->displayHE(); //  displayHE  oras ray paabuton employees 
                 break;
             case 4:
                 $this->roster->displayPE(); //  displayPE manga kupal shows piece workers

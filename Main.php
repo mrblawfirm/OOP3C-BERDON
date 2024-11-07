@@ -146,13 +146,13 @@ class Main
     {
         $this->clear();
         echo "*** List of Employees on the current Roster ***\n";
-        $this->roster->display(); // Assuming display method shows all employees
+        $this->roster->display(); 
         $id = (int)readline("Enter the ID of the employee to delete (0 to return): ");
 
         if ($id === 0) {
             $this->entrance();
         } else {
-            $this->roster->delete($id); // Assuming delete method removes employee by ID
+            $this->roster->delete($id); 
             echo "Employee deleted.\n";
             readline("Press \"Enter\" key to continue...");
             $this->deleteMenu();
@@ -176,7 +176,7 @@ class Main
                 $this->countMenu();
                 break;
             case 3:
-                $this->roster->payroll(); // Assuming payroll method calculates and displays payroll
+                $this->roster->payroll(); 
                 readline("Press \"Enter\" key to continue...");
                 $this->otherMenu();
                 break;
@@ -206,16 +206,16 @@ class Main
                 $this->entrance();
                 break;
             case 1:
-                $this->roster->display(); // Assuming display method shows all employees
+                $this->roster->display(); // display all kupal hahaha shows all employees
                 break;
             case 2:
-                $this->roster->displayCE(); // Assuming displayCE method shows commission employees
+                $this->roster->displayCE(); //  displayCE balatu shows commission employees
                 break;
             case 3:
-                $this->roster->displayHE(); // Assuming displayHE method shows hourly employees
+                $this->roster->displayHE(); //  displayHE  oras paabuton employees 
                 break;
             case 4:
-                $this->roster->displayPE(); // Assuming displayPE method shows piece workers
+                $this->roster->displayPE(); //  displayPE manga kupal shows piece workers
                 break;
             default:
                 echo "Invalid Input!";
@@ -284,6 +284,5 @@ class Main
     }
 }
 
-// Entry point
 $main = new Main();
 $main->start();

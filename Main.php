@@ -146,13 +146,13 @@ class Main
     {
         $this->clear();
         echo "*** List of Employees on the current Roster ***\n";
-        $this->roster->display(); 
+        $this->roster->display();
         $id = (int)readline("Enter the ID of the employee to delete (0 to return): ");
 
         if ($id === 0) {
             $this->entrance();
         } else {
-            $this->roster->delete($id); 
+            $this->roster->delete($id);
             echo "Employee deleted.\n";
             readline("Press \"Enter\" key to continue...");
             $this->deleteMenu();
@@ -176,7 +176,7 @@ class Main
                 $this->countMenu();
                 break;
             case 3:
-                $this->roster->payroll(); 
+                $this->roster->payroll();
                 readline("Press \"Enter\" key to continue...");
                 $this->otherMenu();
                 break;
@@ -206,16 +206,16 @@ class Main
                 $this->entrance();
                 break;
             case 1:
-                $this->roster->display(); // display all kupal hahaha shows all employees
+                $this->roster->display(); // display all kupal
                 break;
             case 2:
-                $this->roster->displayCE(); //  displayCE balatu shows commission employees
+                $this->roster->displayCE(); // display  employees
                 break;
             case 3:
-                $this->roster->displayHE(); //  displayHE  oras ray paabuton employees 
+                $this->roster->displayHE(); // display oras rag geh paabot employees
                 break;
             case 4:
-                $this->roster->displayPE(); //  displayPE manga kupal shows piece workers
+                $this->roster->displayPE(); // display piece workers
                 break;
             default:
                 echo "Invalid Input!";
@@ -263,7 +263,11 @@ class Main
 
     public function clear()
     {
-        system('clear');
+        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+            system('cls');
+        } else {
+            system('clear');
+        }
     }
 
     public function repeat()
@@ -283,6 +287,7 @@ class Main
         }
     }
 }
+
 
 $main = new Main();
 $main->start();
